@@ -328,7 +328,14 @@ html {
     color: var(--dark) !important;
     letter-spacing: -0.02em;
 }
+/* Center logo in header (true middle) */
+#navbarCollapse {
+    position: relative;
+}
 .nav-brand-center {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     padding: 0.65rem 1.25rem !important;
     background: transparent !important;
     border: 2px solid var(--primary);
@@ -342,13 +349,15 @@ html {
     color: #fff !important;
 }
 .nav-logo {
-    height: 36px;
+    top:2px;
+    position: relative;
+    height: 45px;
     width: auto;
     display: block;
     object-fit: contain;
 }
 .nav-logo-center {
-    height: 32px;
+    height: 45px;
 }
 .nav-professional .nav-link {
     font-size: 0.95rem;
@@ -377,6 +386,29 @@ html {
     opacity: 0.05;
     pointer-events: none;
     z-index: 1;
+}
+
+/* Hero section logo – top only */
+.hero-section-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: block;
+    opacity: 0.9;
+    transition: opacity var(--transition);
+}
+.hero-section-logo:hover {
+    opacity: 1;
+}
+.hero-section-logo img {
+    height: 88px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+.hero-section-logo-top {
+    top: 3.25rem;
 }
 
 /* Hero background – layered design (base + blobs) */
@@ -867,6 +899,8 @@ html {
     .hero-profile-footer { padding: 0.85rem 1rem; }
     .hero-profile-badge { font-size: 0.75rem; padding: 0.35rem 0.75rem; }
     .hero-section .hero-container { padding-top: 6rem; padding-bottom: 3rem; }
+    .hero-section-logo-top { top: 3rem; }
+    .hero-section-logo img { height: 64px; }
 }
 
 .typed-cursor {
@@ -1492,6 +1526,11 @@ html {
     letter-spacing: 0.06em;
     color: var(--primary);
     margin-bottom: 0.4rem;
+}
+.service-card-text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-muted);
 }
 .service-card-list {
     list-style: none;
